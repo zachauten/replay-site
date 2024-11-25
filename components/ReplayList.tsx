@@ -1,6 +1,5 @@
 import { JSX } from "preact";
-// import { Replay } from "../static/pkg/sc2_parser.js";
-import { type Replay } from "../static/pkg/sc2_parser.d.ts";
+import { Replay } from "../static/pkg/sc2_parser.js";
 
 interface ReplayListProps extends JSX.HTMLAttributes<HTMLTableElement> {
   replays: Replay[];

@@ -35,16 +35,6 @@ export default function ReplayUpload() {
       }
       parse();
     });
-    return (
-      // <>
-      //   {replays.map((replay) => (
-      //     <>
-      //       <div>{replay.file_path}</div>)
-      //       <div>{replay.parsed.metadata}</div>
-      //     </>
-      //   ))}
-      // </>
-      <ReplayList replays={replays as any} />
-    );
+    return <ReplayList replays={replays} />;
   }
 }
