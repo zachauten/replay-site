@@ -3,6 +3,7 @@ import UploadZone from "../components/UploadZone.tsx";
 import { asset } from "$fresh/runtime.ts";
 import { useEffect, useState } from "preact/hooks";
 import init, { Replay } from "../static/pkg/sc2_parser.js";
+import ReplayList from "../components/ReplayList.tsx";
 
 export default function ReplayUpload() {
   const [replays, setReplays] = useState<Replay[]>([]);
@@ -35,14 +36,15 @@ export default function ReplayUpload() {
       parse();
     });
     return (
-      <>
-        {replays.map((replay) => (
-          <>
-            <div>{replay.file_path}</div>)
-            <div>{replay.parsed.metadata}</div>
-          </>
-        ))}
-      </>
+      // <>
+      //   {replays.map((replay) => (
+      //     <>
+      //       <div>{replay.file_path}</div>)
+      //       <div>{replay.parsed.metadata}</div>
+      //     </>
+      //   ))}
+      // </>
+      <ReplayList replays={replays}/>
     );
   }
 }

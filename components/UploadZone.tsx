@@ -25,14 +25,14 @@ export default function UploadZone(props: { files: Signal<File[]> }) {
   }
 
   return (
-    <div id="dropzone" class="flex items-center justify-center w-full">
+    <div id="dropzone">
       <label
+        id="dropzone-label"
         onDrop={dropHandler}
         onDragOver={(e) => {
           e.preventDefault();
         }}
         for="dropzone-file"
-        class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray border-dashed rounded-lg cursor-pointer hover:bg-gray dark:border-gray dark:hover:border-gray dark:hover:bg-gray"
       >
         <div class="flex flex-col items-center justify-center pt-5 pb-6">
           <svg
@@ -61,7 +61,6 @@ export default function UploadZone(props: { files: Signal<File[]> }) {
         <Input
           id="dropzone-file"
           type="file"
-          class="hidden"
           onInput={inputHandler}
           multiple
         />
