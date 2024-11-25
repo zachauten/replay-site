@@ -44,7 +44,7 @@ export default function ReplayUpload() {
       //     </>
       //   ))}
       // </>
-      <ReplayList replays={replays}/>
+      <ReplayList replays={replays as any} />
     );
   }
 }

@@ -1,7 +1,9 @@
 import { JSX } from "preact";
+// import { Replay } from "../static/pkg/sc2_parser.js";
+import { type Replay } from "../static/pkg/sc2_parser.d.ts";
 
 interface ReplayListProps extends JSX.HTMLAttributes<HTMLTableElement> {
-  replays: any;
+  replays: Replay[];
 }
 
 //TODO: Link to SC2Pulse for player data https://sc2pulse.nephest.com/sc2
@@ -21,7 +23,7 @@ export default function ReplayList(
           <tr>
             <th scope="row">{replay.file_path}</th>
             {/* TODO: Update rust parser to structure the metadata */}
-            <td>{JSON.parse(replay.parsed.metadata).Title}</td>
+            <td>{replay.parsed.metadata.Title}</td>
           </tr>
         </tbody>
       ))}
