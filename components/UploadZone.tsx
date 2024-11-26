@@ -50,8 +50,7 @@ export default function UploadZone(props: { files: Signal<File[]> }) {
             >
             </path>
           </svg>
-          <h2>Click to upload, or drag and drop</h2>
-          <h3>MP3 (Max 30MB)</h3>
+          <h2>Click to upload replays, or drag and drop</h2>
         </div>
         <Input
           id="dropzone-file"
