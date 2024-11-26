@@ -4,7 +4,21 @@
  * @returns {string}
  */
 export function test(): string;
+export type EventType = "ObjectEvent" | "PlayerStatsEvent";
+
+export type EventEntry = [string, DecoderResult];
+
 export type DecoderResult = { Name: string } | { Value: bigint } | { Blob: string } | { Array: DecoderResult[] } | { DataFragment: number } | { Pair: [bigint, number] } | { Gameloop: [string, bigint] } | { Bool: boolean } | { Struct: EventEntry[] } | "Null" | "Empty";
+
+export interface Event {
+    entries: [string, DecoderResult][];
+}
+
+export interface Parsed {
+    player_info: EventEntry[];
+    tracker_events: Event[];
+    metadata: Metadata;
+}
 
 export class Metadata {
   free(): void;
@@ -15,10 +29,6 @@ export class Metadata {
   GameVersion: string;
   Players: (PlayerMetadata)[];
   Title: string;
-}
-export class Parsed {
-  free(): void;
-  metadata: Metadata;
 }
 export class PlayerMetadata {
   free(): void;
@@ -64,9 +74,6 @@ export interface InitOutput {
   readonly __wbg_set_metadata_Duration: (a: number, b: number) => void;
   readonly __wbg_get_metadata_Players: (a: number) => Array;
   readonly __wbg_set_metadata_Players: (a: number, b: number, c: number) => void;
-  readonly __wbg_parsed_free: (a: number, b: number) => void;
-  readonly __wbg_get_parsed_metadata: (a: number) => number;
-  readonly __wbg_set_parsed_metadata: (a: number, b: number) => void;
   readonly __wbg_replay_free: (a: number, b: number) => void;
   readonly __wbg_get_replay_parsed: (a: number) => number;
   readonly __wbg_set_replay_parsed: (a: number, b: number) => void;
@@ -82,12 +89,13 @@ export interface InitOutput {
   readonly __wbg_get_playermetadata_AssignedRace: (a: number) => Array;
   readonly __wbg_get_replay_file_path: (a: number) => Array;
   readonly __wbg_get_replay_content_hash: (a: number) => Array;
-  readonly __wbindgen_export_0: WebAssembly.Table;
-  readonly __wbindgen_free: (a: number, b: number, c: number) => void;
   readonly __wbindgen_malloc: (a: number, b: number) => number;
   readonly __wbindgen_realloc: (a: number, b: number, c: number, d: number) => number;
+  readonly __wbindgen_export_2: WebAssembly.Table;
+  readonly __wbindgen_free: (a: number, b: number, c: number) => void;
   readonly __externref_drop_slice: (a: number, b: number) => void;
   readonly __externref_table_alloc: () => number;
+  readonly __wbindgen_exn_store: (a: number) => void;
   readonly __wbindgen_start: () => void;
 }
 
