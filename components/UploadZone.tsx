@@ -34,10 +34,9 @@ export default function UploadZone(props: { files: Signal<File[]> }) {
         }}
         for="dropzone-file"
       >
-        <div class="flex flex-col items-center justify-center pt-5 pb-6">
+        <div id="dropzone-icon">
           <svg
             aria-hidden="true"
-            class="w-10 h-10 mb-3 text-black dark:text-yellow"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -51,12 +50,8 @@ export default function UploadZone(props: { files: Signal<File[]> }) {
             >
             </path>
           </svg>
-          <p class="mb-2 text-sm text-black dark:text-yellow">
-            <span class="font-semibold">Click to upload</span> or drag and drop
-          </p>
-          <p class="text-xs text-black dark:text-yellow">
-            MP3 (Max 30MB)
-          </p>
+          <h2>Click to upload, or drag and drop</h2>
+          <h3>MP3 (Max 30MB)</h3>
         </div>
         <Input
           id="dropzone-file"
