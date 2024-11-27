@@ -3,6 +3,24 @@
   --accent-color: #ff6600;
 }
 
+@font-face {
+  font-family: "Londrina Shadow";
+  src: url("/fonts/Londrina_Shadow/LondrinaShadow-Regular.ttf")
+    format("truetype");
+  font-style: normal;
+  /* https://developer.chrome.com/blog/font-display */
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("/fonts/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf")
+    format("truetype");
+  font-style: normal;
+  /* https://developer.chrome.com/blog/font-display */
+  font-display: fallback;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -29,15 +47,12 @@ header {
   padding: 1em 1em 0;
 }
 
-footer {}
-
-@font-face {
-  font-family: "Londrina Shadow";
-  src: url("/fonts/Londrina_Shadow/LondrinaShadow-Regular.ttf")
-    format("truetype");
-  font-style: normal;
-  /* https://developer.chrome.com/blog/font-display */
-  font-display: fallback;
+footer {
+  /* background-color: gray; */
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: 0;
+  padding: 1rem 0;
 }
 
 h1 {
@@ -45,6 +60,11 @@ h1 {
   font-weight: 400;
   font-style: normal;
   font-size: 256px;
+}
+
+#dropzone-text {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 100;
 }
 
 #index-container {

@@ -50,7 +50,7 @@ export default function UploadZone(props: { files: Signal<File[]> }) {
             >
             </path>
           </svg>
-          <h2>Click to upload replays, or drag and drop</h2>
+          <h2 id="dropzone-text">Click to upload replays, or drag and drop</h2>
         </div>
         <Input
           id="dropzone-file"
